@@ -8,6 +8,7 @@
 在 2026 年，我们不再关注 Transformer 的内部矩阵乘法，而是关注其**I/O 特性**。
 
 ```mermaid
+
 graph TD
     Input[输入文本序列] --> Tokenizer[分词器 (Tokenizer)]
     Tokenizer --> Tokens[Token IDs: [101, 205, ...]]
