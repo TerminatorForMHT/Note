@@ -9,13 +9,13 @@
 
 ```mermaid
 graph TD
-    Input[输入文本序列] --> Tokenizer["分词器 (Tokenizer)"]
+    Input[输入文本序列] --> Tokenizer["分词器 Tokenizer"]
     Tokenizer --> Tokens["Token IDs: [101, 205, ...]"]
-    Tokens --> Embedding["嵌入层 (Embedding Layer)"]
+    Tokens --> Embedding["嵌入层 Embedding Layer"]
     Embedding --> Vectors[高维向量矩阵]
-    Vectors --> Transformer["Transformer Blocks (Attention + FFN)"]
+    Vectors --> Transformer["Transformer Blocks Attention + FFN"]
     Transformer --> Logits["概率分布 logits"]
-    Logits --> Sampler[采样器 (Sampler)]
+    Logits --> Sampler["采样器 Sampler"]
     Sampler --> NextToken[下一个 Token ID]
     NextToken --> Detokenizer[解词器]
     Detokenizer --> Output[输出文本]
