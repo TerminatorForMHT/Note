@@ -8,14 +8,13 @@
 在 2026 年，我们不再关注 Transformer 的内部矩阵乘法，而是关注其**I/O 特性**。
 
 ```mermaid
-
 graph TD
-    Input[输入文本序列] --> Tokenizer[分词器 (Tokenizer)]
-    Tokenizer --> Tokens[Token IDs: [101, 205, ...]]
-    Tokens --> Embedding[嵌入层 (Embedding Layer)]
+    Input[输入文本序列] --> Tokenizer["分词器 (Tokenizer)"]
+    Tokenizer --> Tokens["Token IDs: [101, 205, ...]"]
+    Tokens --> Embedding["嵌入层 (Embedding Layer)"]
     Embedding --> Vectors[高维向量矩阵]
-    Vectors --> Transformer[Transformer Blocks (Attention + FFN)]
-    Transformer --> Logits[概率分布 logits]
+    Vectors --> Transformer["Transformer Blocks (Attention + FFN)"]
+    Transformer --> Logits["概率分布 logits"]
     Logits --> Sampler[采样器 (Sampler)]
     Sampler --> NextToken[下一个 Token ID]
     NextToken --> Detokenizer[解词器]
