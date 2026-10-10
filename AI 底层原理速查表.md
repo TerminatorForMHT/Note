@@ -18,18 +18,18 @@
 
 ```mermaid
 graph LR
-    Input[输入序列: "The cat sat on the mat"] --> Embed[Embedding Layer<br/>(向量化)]
-    Embed --> PosEnc[Positional Encoding<br/>(添加位置信息)]
-    PosEnc --> Transformer[Transformer Blocks<br/>(N层堆叠)]
+    Input["输入序列: The cat sat on the mat"] --> Embed["Embedding Layer<br/>(向量化)"]
+    Embed --> PosEnc["Positional Encoding<br/>(添加位置信息)"]
+    PosEnc --> Transformer
     
-    subgraph Transformer_Block [单个 Transformer Block]
+    subgraph Transformer_Block ["单个 Transformer Block (N层堆叠)"]
         direction TB
-        Attn[Self-Attention<br/>(全局关联)] --> Norm1[Layer Norm]
-        Norm1 --> FFN[Feed-Forward Network<br/>(非线性变换)]
+        Attn["Self-Attention<br/>(全局关联)"] --> Norm1[Layer Norm]
+        Norm1 --> FFN["Feed-Forward Network<br/>(非线性变换)"]
         FFN --> Norm2[Layer Norm]
     end
     
-    Transformer --> Logits[Output Logits<br/>(概率分布)]
+    Transformer --> Logits["Output Logits<br/>(概率分布)"]
     Logits --> Token[Next Token Prediction]
 ```
 
