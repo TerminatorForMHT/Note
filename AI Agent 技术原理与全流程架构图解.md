@@ -70,11 +70,11 @@ sequenceDiagram
 
 ```mermaid
 graph TB
-    subgraph Client_Layer [用户交互层]
+    subgraph Client_Layer["用户交互层"]
         UI[Streamlit UI / CLI]
     end
 
-    subgraph Orchestration_Layer [编排控制层 (LangGraph)]
+    subgraph Orchestration_Layer["编排控制层 (LangGraph)"]
         Router{Router Node}
         Analyst[Analyst Agent]
         Verifier[Verifier Agent]
@@ -87,16 +87,16 @@ graph TB
         Verifier --> Reporter
     end
 
-    subgraph Memory_Layer [记忆存储层]
+    subgraph Memory_Layer["记忆存储层"]
         VectorDB[(Vector DB: Chroma)]
         History[(Chat History)]
     end
 
-    subgraph Protocol_Layer [通信协议层 (MCP)]
+    subgraph Protocol_Layer["通信协议层 (MCP)"]
         MCP_Client[MCP Client]
     end
 
-    subgraph Tool_Layer [工具与服务层]
+    subgraph Tool_Layer["工具与服务层"]
         MCP_Server_Logs[MCP Server: Logs]
         MCP_Server_DB[MCP Server: SQLite]
         Local_LLM[Ollama: Qwen2.5-14B]
